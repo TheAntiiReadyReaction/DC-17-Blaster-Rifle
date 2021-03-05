@@ -13,7 +13,7 @@ function createShell () {
   const interface = prompt('How many pages do you wish to create?: ');
   
   if (isNaN(interface) === true) {
-    alert("Not a number.);
+    alert("Not a number.");
           
     createShell();
   }
