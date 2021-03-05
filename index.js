@@ -23,7 +23,7 @@ function createShell () {
       add_new_page.click();
       
       const src_iframe = document.querySelector('[title="Optimizely Internal Frame"]');
-      const src_iframe_new_page = src_iframe.contentWindow.document.getElementById("create-page-dialog__title");
+      const src_iframe_new_page = document.getElementById("create-page-dialog__title");
       
       src_iframe_new_page.value = makeId(5);
       document.getElementByClassName("wds-button wds-is-text create-page-dialog__button").click();
