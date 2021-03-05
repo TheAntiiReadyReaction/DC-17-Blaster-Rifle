@@ -9,7 +9,6 @@ function makeid (length) {
 }
 
 function createShell () {
-  const wiki_link = prompt('Wiki link: ');
   const interface = prompt('How many pages do you wish to create?: ');
   
   if (isNaN(interface) === true) {
@@ -19,9 +18,7 @@ function createShell () {
   }
   
   else {
-    for (i = 0; i < interface.length; i++) {
-      location = wiki_link;
-      
+    for (i = 0; i < interface.length; i++) {     
       const add_new_page = document.querySelector('[title="Add new page"]');
       add_new_page.click();
       
