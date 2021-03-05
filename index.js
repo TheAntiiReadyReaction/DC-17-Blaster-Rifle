@@ -25,7 +25,7 @@ function createShell () {
       const src_iframe = document.querySelector('[title="Optimizely Internal Frame"]');
       const src_iframe_new_page = document.getElementById("create-page-dialog__title");
       
-      src_iframe_new_page.value = makeId(5);
+      src_iframe_new_page.value = String(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
       document.getElementByClassName("wds-button wds-is-text create-page-dialog__button").click();
     }
   }
