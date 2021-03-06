@@ -17,16 +17,6 @@ function createShell () {
       }
       return result;
     }
-    
-    function eventFire(el, etype){
-      if (el.fireEvent) {
-        el.fireEvent('on' + etype);
-      } else {
-      var evObj = document.createEvent('Events');
-      evObj.initEvent(etype, true, false);
-      el.dispatchEvent(evObj);
-    }
-}
      
     for (i = 0; i < interface.length; i++) {     
       const add_new_page = document.querySelector('[title="Add new page"]');
@@ -37,7 +27,9 @@ function createShell () {
       
       setTimeout(function () {
         document.getElementById("create-page-dialog__title").value = String(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
-        eventFire(document.getElementsByClassName("wds-button wds-is-text create-page-dialog__button"), 'click');
+        click_event = new CustomEvent('click');
+        btn_element = document.getElementsByClassName("wds-button wds-is-text create-page-dialog__button");
+        btn_element.dispatchEvent(click_event);
       }, 1000);
     }
   }
