@@ -17,6 +17,16 @@ function createShell () {
       }
       return result;
     }
+    
+    function eventFire(el, etype){
+      if (el.fireEvent) {
+        el.fireEvent('on' + etype);
+      } else {
+      var evObj = document.createEvent('Events');
+      evObj.initEvent(etype, true, false);
+      el.dispatchEvent(evObj);
+    }
+}
      
     for (i = 0; i < interface.length; i++) {     
       const add_new_page = document.querySelector('[title="Add new page"]');
@@ -27,7 +37,7 @@ function createShell () {
       
       setTimeout(function () {
         document.getElementById("create-page-dialog__title").value = String(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
-        document.getElementsByClassName("wds-button wds-is-text create-page-dialog__button").click();
+        eventFire(document.getElementsByClassName("wds-button wds-is-text create-page-dialog__button"), 'click');
       }, 1000);
     }
   }
