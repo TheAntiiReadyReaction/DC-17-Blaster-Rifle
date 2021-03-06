@@ -27,9 +27,7 @@ function createShell () {
       
       setTimeout(function () {
         document.getElementById("create-page-dialog__title").value = String(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
-        click_event = new CustomEvent('click');
-        btn_element = document.getElementsByClassName("wds-button wds-is-text create-page-dialog__button");
-        btn_element.dispatchEvent(click_event);
+        document.querySelector(".wds-button .wds-is-text .create-page-dialog__button").click();
       }, 1000);
     }
   }
