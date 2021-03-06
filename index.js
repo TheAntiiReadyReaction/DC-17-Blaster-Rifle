@@ -25,8 +25,10 @@ function createShell () {
       const src_iframe = document.querySelector('[title="Optimizely Internal Frame"]');
       const src_iframe_new_page = null;
       
-      src_iframe.contentWindow.document.getElementById("create-page-dialog__title").value = String(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
-      document.getElementByClassName("wds-button wds-is-text create-page-dialog__button").click();
+      setTimeout(function () {
+        document.getElementById("create-page-dialog__title").value = String(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
+        document.getElementByClassName("wds-button wds-is-text create-page-dialog__button").click();
+      }, 1000);
     }
   }
 }
